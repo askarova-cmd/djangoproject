@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Бронирование</title>
+
+    <link rel="stylesheet" href="{% static 'kazakhfood/css/booking.css' %}">
+</head>
+<body>
+
+<!-- Навигация справа -->
+<header class="nav-wrapper">
+    <div class="nav-links">
+        <a href="{% url 'index' %}">Главная</a>
+        <a href="{% url 'about' %}">О нас</a>
+        <a href="{% url 'menu' %}">Меню</a>
+        <a href="{% url 'blog' %}">Блог</a>
+        <a href="{% url 'contacts' %}">Контакты</a>
+    </div>
+
+    <div class="auth-button">
+        <a href="{% url 'login' %}">Вход</a>
+        <a href="{% url 'register' %}">Регистрация</a>
+    </div>
+</header>
+
+
+<div class="booking-page">
+
+    <h1>Забронировать стол</h1>
+
+    <div class="booking-card">
+        <form method="post">
+            {% csrf_token %}
+
+            <div class="row">
+                <div class="group">
+                    <label>Дата</label>
+                    <input type="date">
+                </div>
+
+                <div class="group">
+                    <label>Время</label>
+                    <input type="time">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="group">
+                    <label>Имя</label>
+                    <input type="text">
+                </div>
+
+                <div class="group">
+                    <label>Телефон</label>
+                    <input type="text">
+                </div>
+            </div>
+
+            <div class="group full">
+                <label>Количество людей</label>
+                <select>
+                    <option>1 человек</option>
+                    <option>2 человека</option>
+                    <option>3 человека</option>
+                    <option>4 человека</option>
+                    <option>5+ человек</option>
+                </select>
+            </div>
+
+            <button>Забронировать стол</button>
+        </form>
+    </div>
+
+</div>
+
+</body>
+</html>

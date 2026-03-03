@@ -1,0 +1,134 @@
+/* =========================
+   Общие стили и фон сайта
+========================= */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url("../img/bg.jpeg") no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+}
+
+/* =========================
+   Левая боковая панель
+========================= */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 200px;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75); /* чёрный полупрозрачный */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Логотип */
+.sidebar .logo-img {
+    width: 50px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.sidebar .logo-text {
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 25px;
+}
+
+/* Навигация */
+.sidebar .nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar .nav-links li {
+    margin-bottom: 18px;
+}
+
+.sidebar .nav-links li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.sidebar .nav-links li a:hover {
+    color: #f5a623; /* оранжевый при наведении */
+}
+
+/* =========================
+   Основной контент
+========================= */
+.main-content {
+    margin-left: 220px;
+    padding: 20px;
+}
+
+/* =========================
+   Верхний правый блок
+========================= */
+.top-right {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-weight: bold;
+}
+
+.top-right a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 15px;
+    transition: color 0.3s;
+}
+
+.top-right a:hover {
+    color: #f5a623;
+}
+
+/* =========================
+   Центральный контент
+========================= */
+.center-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background: rgba(0, 0, 0, 0.45);
+    padding: 35px 40px;
+    border-radius: 12px;
+}
+
+.center-content h1 {
+    font-size: 60px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.center-content p {
+    font-size: 24px;
+    margin-bottom: 35px;
+}
+
+/* =========================
+   Кнопка "Забронировать стол"
+========================= */
+.reserve-btn .btn {
+    display: inline-block;
+    padding: 14px 28px;
+    background-color: #f5a623;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.reserve-btn .btn:hover {
+    background-color: #d48806;
+}
+

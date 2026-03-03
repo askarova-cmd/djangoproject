@@ -1,0 +1,18 @@
+{% extends "kazakhfood/layout.html" %}
+
+{% block title %}Главная{% endblock %}
+
+{% block content %}
+<div class="center-content">
+    <h1>SӘTTI</h1>
+    <p>Добро пожаловать в ресторан казахской национальной кухни</p>
+
+    <!-- Кнопка внизу -->
+    <div class="reserve-btn" style="margin-top: 50px;">
+        <a href="{% url 'reserve' %}" class="btn btn-primary">Забронировать стол</a>
+    </div>
+</div>
+{% endblock %}
+
+
+

@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="{% static 'kazakhfood/css/auth.css' %}">
+</head>
+<body>
+
+<div class="auth-page">
+
+    <div class="auth-card">
+        <h1>Регистрация</h1>
+
+        <form method="post">
+            {% csrf_token %}
+
+            {% if error %}
+                <p style="color:red; text-align:center;">
+                    {{ error }}
+                </p>
+            {% endif %}
+
+            <div class="auth-group">
+                <label>Логин</label>
+                <input type="text" name="username" required>
+            </div>
+
+            <div class="auth-group">
+                <label>Email</label>
+                <input type="email" name="email" required>
+            </div>
+
+            <div class="auth-group">
+                <label>Пароль</label>
+                <input type="password" name="password" required>
+            </div>
+
+            <div class="auth-group">
+                <label>Повторите пароль</label>
+                <input type="password" name="password2" required>
+            </div>
+
+            <button type="submit">Зарегистрироваться</button>
+
+            <p class="auth-link">
+                Уже есть аккаунт?
+                <a href="{% url 'login' %}">Войти</a>
+            </p>
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>

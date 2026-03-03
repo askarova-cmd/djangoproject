@@ -1,0 +1,120 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f8f8f8;
+}
+
+/* ===== НАВИГАЦИЯ СПРАВА ===== */
+
+.nav-wrapper {
+    width: 90%;
+    margin: 20px auto 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 30px;
+}
+
+/* ссылки меню */
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+}
+.nav-links a:hover {
+    color: #b32b2b;
+}
+
+/* кнопка вход/регистрация */
+.auth-button {
+    background: #f3f3f3;
+    border-radius: 30px;
+    padding: 8px 18px;
+    display: flex;
+    gap: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.auth-button a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+}
+
+.auth-button a:hover {
+    color: #b32b2b;
+}
+
+/* ===== СТРАНИЦА ===== */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: white;
+}
+
+.booking-page {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.booking-page h1 {
+    font-size: 45px;
+    color: #2c2c2c;
+}
+
+.booking-card {
+    width: 650px;
+    margin: 40px auto;
+    background: #f3f3f3;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+/* строки */
+.row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.group.full {
+    margin-bottom: 20px;
+}
+
+/* поля */
+.group input,
+.group select {
+    height: 45px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    padding: 0 10px;
+}
+
+/* кнопка */
+button {
+    width: 100%;
+    padding: 14px;
+    background-color: #b32b2b;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #8f1f1f;
+}

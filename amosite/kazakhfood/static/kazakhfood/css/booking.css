@@ -1,11 +1,11 @@
+/* Общие стили */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     background: #f8f8f8;
 }
 
-/* ===== НАВИГАЦИЯ СПРАВА ===== */
-
+/* Навигация */
 .nav-wrapper {
     width: 90%;
     margin: 20px auto 0;
@@ -15,7 +15,6 @@ body {
     gap: 30px;
 }
 
-/* ссылки меню */
 .nav-links {
     display: flex;
     gap: 25px;
@@ -26,38 +25,12 @@ body {
     color: #000;
     font-weight: 500;
 }
+
 .nav-links a:hover {
     color: #b32b2b;
 }
 
-/* кнопка вход/регистрация */
-.auth-button {
-    background: #f3f3f3;
-    border-radius: 30px;
-    padding: 8px 18px;
-    display: flex;
-    gap: 12px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-.auth-button a {
-    text-decoration: none;
-    color: #000;
-    font-weight: 500;
-}
-
-.auth-button a:hover {
-    color: #b32b2b;
-}
-
-/* ===== СТРАНИЦА ===== */
-
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: white;
-}
-
+/* Страница бронирования */
 .booking-page {
     text-align: center;
     margin-top: 60px;
@@ -68,6 +41,7 @@ body {
     color: #2c2c2c;
 }
 
+/* Карточка бронирования */
 .booking-card {
     width: 650px;
     margin: 40px auto;
@@ -77,7 +51,7 @@ body {
     box-shadow: 0 15px 35px rgba(0,0,0,0.12);
 }
 
-/* строки */
+/* Ряды и группы */
 .row {
     display: flex;
     gap: 20px;
@@ -94,16 +68,17 @@ body {
     margin-bottom: 20px;
 }
 
-/* поля */
+/* Поля ввода и селект */
 .group input,
 .group select {
     height: 45px;
     border-radius: 10px;
     border: 1px solid #ccc;
     padding: 0 10px;
+    font-size: 16px;
 }
 
-/* кнопка */
+/* Кнопка */
 button {
     width: 100%;
     padding: 14px;
@@ -117,4 +92,16 @@ button {
 
 button:hover {
     background-color: #8f1f1f;
+}
+
+/* Сообщение об успехе */
+.success-message {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 16px;
 }

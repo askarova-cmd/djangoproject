@@ -1,7 +1,8 @@
-from django.shortcuts import render, redirect
 from .models import ContactMessage
-from django.contrib.auth.models import User
-from django.contrib.auth import authenticate, login as auth_login
+from django.shortcuts import render, get_object_or_404
+from .models import Dish, Category
+from .forms import BookingForm
+from .models import BlogPost
 
 
 def index(request):
@@ -12,48 +13,47 @@ def about(request):
     return render(request, 'kazakhfood/about.html')
 
 
-def menu(request):
-    return render(request, 'kazakhfood/about.html')
+def menu(request, category_slug=None):
+    categories = Category.objects.all()
+    dishes = Dish.objects.filter(is_available=True)
+
+    if category_slug:
+        category = get_object_or_404(Category, slug=category_slug)
+        dishes = dishes.filter(category=category)
+
+    return render(request, 'kazakhfood/menu.html', {
+        'categories': categories,
+        'dishes': dishes
+    })
+
+
+def dish_detail(request, pk):
+    dish = get_object_or_404(Dish, pk=pk)
+    return render(request, 'kazakhfood/dish_detail.html', {
+        'dish': dish
+    })
 
 
 def blog(request):
-    return render(request, 'kazakhfood/about.html')
+    posts = BlogPost.objects.filter(is_published=True).order_by('-created_at')
+    return render(request, 'kazakhfood/blog.html', {'posts': posts})
 
-
-def login_view(request):
-    return render(request, 'kazakhfood/login.html')
-
-
-def register(request):
-    if request.method == "POST":
-        username = request.POST.get("username")
-        email = request.POST.get("email")
-        password = request.POST.get("password")
-        password2 = request.POST.get("password2")
-
-        if password == password2:
-            if not User.objects.filter(username=username).exists():
-                user = User.objects.create_user(
-                    username=username,
-                    email=email,
-                    password=password
-                )
-                auth_login(request, user)
-                return redirect("index")
-            else:
-                return render(request, "kazakhfood/register.html", {
-                    "error": "Пользователь уже существует"
-                })
-        else:
-            return render(request, "kazakhfood/register.html", {
-                "error": "Пароли не совпадают"
-            })
-
-    return render(request, "kazakhfood/register.html")
+def blog_detail(request, pk):
+    post = get_object_or_404(BlogPost, pk=pk, is_published=True)
+    return render(request, 'kazakhfood/blog_detail.html', {'post': post})
 
 
 def reserve(request):
-    return render(request, 'kazakhfood/reserve.html')
+    success = False
+    if request.method == 'POST':
+        form = BookingForm(request.POST)
+        if form.is_valid():
+            form.save()
+            success = True
+            form = BookingForm()
+    else:
+        form = BookingForm()
+    return render(request, 'kazakhfood/reserve.html', {'form': form, 'success': success})
 
 
 def contacts(request):

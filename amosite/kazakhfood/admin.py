@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, Dish
+from .models import Dish, Category, ContactMessage, BlogPost, BlogImage
 
 
 @admin.register(Category)
@@ -14,6 +14,16 @@ class DishAdmin(admin.ModelAdmin):
     list_filter = ('category', 'is_available')
     search_fields = ('title', 'description')
 
+class BlogImageInline(admin.TabularInline):
+    model = BlogImage
+    extra = 1
+
+@admin.register(BlogPost)
+class BlogPostAdmin(admin.ModelAdmin):
+    list_display = ('title', 'created_at', 'is_published')
+    list_filter = ('is_published', 'created_at')
+    search_fields = ('title', 'content')
+    inlines = [BlogImageInline]  # подключаем возможность добавлять несколько изображений
 
 from .models import ContactMessage
 

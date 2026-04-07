@@ -44,6 +44,32 @@ body {
     color: #555;
 }
 
+/* ===== НАВИГАЦИЯ СПРАВА ===== */
+
+.nav-wrapper {
+    width: 90%;
+    margin: 20px auto 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 30px;
+}
+
+/* ссылки меню */
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+}
+.nav-links a:hover {
+    color: #b32b2b;
+}
+
 /* Кнопка назад */
 .back-btn {
     display: block;

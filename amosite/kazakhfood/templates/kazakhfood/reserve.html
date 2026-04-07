@@ -1,15 +1,14 @@
+{% extends 'kazakhfood/base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>Бронирование</title>
 
+{% block title %}Бронирование{% endblock %}
+
+{% block extra_css %}
     <link rel="stylesheet" href="{% static 'kazakhfood/css/booking.css' %}">
-</head>
-<body>
+{% endblock %}
 
-<!-- Навигация справа -->
+{% block content %}
+
 <header class="nav-wrapper">
     <div class="nav-links">
         <a href="{% url 'index' %}">Главная</a>
@@ -18,62 +17,64 @@
         <a href="{% url 'blog' %}">Блог</a>
         <a href="{% url 'contacts' %}">Контакты</a>
     </div>
-
-    <div class="auth-button">
-        <a href="{% url 'login' %}">Вход</a>
-        <a href="{% url 'register' %}">Регистрация</a>
-    </div>
 </header>
 
-
-<div class="booking-page">
+<main class="booking-page">
 
     <h1>Забронировать стол</h1>
+
+    <!-- Сообщение после успешного бронирования -->
+    {% if success %}
+        <div class="success-message">
+            Спасибо, Ваш стол успешно забронирован!
+        </div>
+    {% endif %}
 
     <div class="booking-card">
         <form method="post">
             {% csrf_token %}
-
             <div class="row">
                 <div class="group">
-                    <label>Дата</label>
-                    <input type="date">
+                    <label for="id_date">Дата</label>
+                    <input type="date" name="date" id="id_date" required>
                 </div>
 
                 <div class="group">
-                    <label>Время</label>
-                    <input type="time">
+                    <label for="id_time">Время</label>
+                    <input type="time" name="time" id="id_time" required>
                 </div>
             </div>
 
             <div class="row">
                 <div class="group">
-                    <label>Имя</label>
-                    <input type="text">
+                    <label for="id_name">Имя</label>
+                    <input type="text" name="name" id="id_name" placeholder="Ваше имя" required>
                 </div>
 
                 <div class="group">
-                    <label>Телефон</label>
-                    <input type="text">
+                    <label for="id_phone">Телефон</label>
+                    <input type="text" name="phone" id="id_phone" placeholder="+7 (___) ___-__-__" required>
                 </div>
             </div>
 
             <div class="group full">
-                <label>Количество людей</label>
-                <select>
-                    <option>1 человек</option>
-                    <option>2 человека</option>
-                    <option>3 человека</option>
-                    <option>4 человека</option>
-                    <option>5+ человек</option>
+                <label for="id_people_count">Количество людей</label>
+                <select name="people_count" id="id_people_count" required>
+                    <option value="1">1 человек</option>
+                    <option value="2">2 человека</option>
+                    <option value="3">3 человека</option>
+                    <option value="4">4 человека</option>
+                    <option value="5">5+ человек</option>
                 </select>
             </div>
 
-            <button>Забронировать стол</button>
+            <button type="submit">Забронировать стол</button>
         </form>
     </div>
 
-</div>
+</main>
 
 </body>
 </html>
+
+{% endblock %}

@@ -1,18 +1,50 @@
-{% extends "kazakhfood/layout.html" %}
+{% extends 'kazakhfood/base.html' %}
+{% load static %}
 
 {% block title %}Главная{% endblock %}
 
-{% block content %}
-<div class="center-content">
-    <h1>SӘTTI</h1>
-    <p>Добро пожаловать в ресторан казахской национальной кухни</p>
-
-    <!-- Кнопка внизу -->
-    <div class="reserve-btn" style="margin-top: 50px;">
-        <a href="{% url 'reserve' %}" class="btn btn-primary">Забронировать стол</a>
-    </div>
-</div>
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'kazakhfood/css/kazakhfood.css' %}">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 {% endblock %}
 
+{% block content %}
 
+<div class="page-wrapper" style="
+    display:flex;
+    flex:1;
+    min-height:calc(100vh - 100px);
+    background-image: url('{% static 'kazakhfood/img/bg.jpeg' %}');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+">
 
+    <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+
+<aside class="sidebar" id="sidebar">
+    <img src="{% static 'kazakhfood/img/logo_simple.png' %}" alt="Лого" class="logo-img" width="200px">
+
+    <ul class="nav-links">
+        <li><a href="{% url 'index' %}">Главная</a></li>
+        <li><a href="{% url 'about' %}">О нас</a></li>
+        <li><a href="{% url 'menu' %}">Меню</a></li>
+        <li><a href="{% url 'blog' %}">Блог</a></li>
+        <li><a href="{% url 'contacts' %}">Контакты</a></li>
+    </ul>
+</aside>
+
+        <div class="center-content" style="margin-top:50px;">
+            <h1>SӘTTI</h1>
+            <p>Добро пожаловать в ресторан казахской национальной кухни</p>
+
+            <div class="reserve-btn">
+                <a href="{% url 'reserve' %}" class="btn btn-primary">Забронировать стол</a>
+            </div>
+        </div>
+    </main>
+
+</div>
+
+{% endblock %}

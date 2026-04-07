@@ -1,8 +1,143 @@
-{% extends 'kazakhfood/layout.html' %}
+{% extends 'kazakhfood/base.html' %}
+{% load static %}
 
 {% block title %}О нас{% endblock %}
 
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'kazakhfood/css/about.css' %}">
+{% endblock %}
+
 {% block content %}
-<h1>О нас</h1>
-<p>Мы готовим традиционную казахскую кухню</p>
+
+<header class="nav-wrapper">
+    <div class="nav-links">
+        <a href="{% url 'index' %}">Главная</a>
+        <a href="{% url 'about' %}">О нас</a>
+        <a href="{% url 'menu' %}">Меню</a>
+        <a href="{% url 'blog' %}">Блог</a>
+        <a href="{% url 'contacts' %}">Контакты</a>
+    </div>
+</header>
+
+<!-- БЛОК СЕМЬЯ -->
+
+<section class="family-section">
+
+<div class="family-image">
+<img src="{% static 'kazakhfood/img/s2.jpg' %}" alt="Баурсаки">
+</div>
+
+<div class="family-text">
+
+<h2>Для семьи</h2>
+
+<p>
+Наш ресторан — это место, где собираются семьи и друзья.
+Мы сохраняем традиции казахского гостеприимства
+и готовим блюда по настоящим национальным рецептам.
+</p>
+
+<p>
+Здесь вы можете провести уютный вечер,
+насладиться ароматом свежих баурсаков
+и почувствовать атмосферу настоящей казахской кухни.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- ВИДЕО -->
+
+<section class="video-section">
+
+<video controls>
+<source src="{% static 'kazakhfood/video/IMG_6208 (1).MP4' %}" type="video/mp4">
+</video>
+
+</section>
+
+
+
+<!-- 3 ТЕКСТА ПОД ВИДЕО -->
+
+<section class="features">
+
+<div class="feature">
+<h3>Традиционная кухня</h3>
+<p>
+Мы готовим блюда по настоящим казахским рецептам,
+сохраняя вкус и традиции национальной кухни.
+</p>
+</div>
+
+<div class="feature">
+<h3>Уютная атмосфера</h3>
+<p>
+Наш ресторан создан для теплых встреч
+с семьей и друзьями.
+</p>
+</div>
+
+<div class="feature">
+<h3>Лучшие продукты</h3>
+<p>
+Мы используем только свежие
+и качественные ингредиенты.
+</p>
+</div>
+
+</section>
+
+
+
+<!-- ИНФОРМАЦИЯ -->
+
+<section class="info-section">
+
+<h2 class="info-title">Информация</h2>
+
+<div class="info-content">
+
+
+<div class="info-boxes">
+
+<div class="box">
+<h3>3</h3>
+<p>Локации</p>
+</div>
+
+<div class="box">
+<h3>2026</h3>
+<p>Основан</p>
+</div>
+
+<div class="box">
+<h3>65+</h3>
+<p>Сотрудников</p>
+</div>
+
+<div class="box">
+<h3>100%</h3>
+<p>Довольных гостей</p>
+</div>
+
+</div>
+
+
+<div class="info-image">
+<img src="{% static 'kazakhfood/img/kazakh_girl.jpg' %}" alt="Казахская девушка">
+</div>
+
+
+</div>
+
+</section>
+
+
+</body>
+</html>
+
 {% endblock %}

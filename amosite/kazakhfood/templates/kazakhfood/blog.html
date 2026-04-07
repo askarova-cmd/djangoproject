@@ -1,0 +1,50 @@
+{% extends 'kazakhfood/base.html' %}
+{% load static %}
+
+{% block title %}Блог{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'kazakhfood/css/blog.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<header class="nav-wrapper">
+    <div class="nav-links">
+        <a href="{% url 'index' %}">Главная</a>
+        <a href="{% url 'about' %}">О нас</a>
+        <a href="{% url 'menu' %}">Меню</a>
+        <a href="{% url 'blog' %}">Блог</a>
+        <a href="{% url 'contacts' %}">Контакты</a>
+    </div>
+</header>
+
+<h1 class="title">Блог / Статьи</h1>
+
+<main>
+    <div class="menu-grid">
+        {% for post in posts %}
+            <a href="{% url 'blog_detail' post.id %}" class="card-link">
+                <div class="card">
+
+                    {% if post.images.first %}
+                        <img src="{{ post.images.first.image.url }}" alt="{{ post.title }}" class="card-img">
+                    {% endif %}
+
+                    <h3 class="blog-title">{{ post.title }}</h3>
+
+                    <p class="desc">
+                        {{ post.content|truncatewords:12 }}
+                    </p>
+                </div>
+            </a>
+        {% empty %}
+            <p>Нет статей.</p>
+        {% endfor %}
+    </div>
+</main>
+
+</body>
+</html>
+
+{% endblock %}

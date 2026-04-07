@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ dish.title }}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<div class="detail-container">
+
+    <h1>{{ dish.title }}</h1>
+
+    {% if dish.image %}
+        <img src="{{ dish.image.url }}" class="detail-img">
+    {% endif %}
+
+    <p class="price">Цена: {{ dish.price }}₸</p>
+    <p class="desc">{{ dish.description }}</p>
+
+    <a href="{% url 'menu' %}" class="back-btn">← Назад</a>
+
+</div>
+
+</body>
+</html>

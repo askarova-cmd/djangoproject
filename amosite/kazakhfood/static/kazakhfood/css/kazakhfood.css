@@ -1,92 +1,52 @@
-/* =========================
-   Общие стили и фон сайта
-========================= */
+/* ===== ОСНОВА ===== */
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
 }
 
-.sidebar {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 200px;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.75);
-    padding: 20px;
-    box-sizing: border-box;
+/* ФОН НА ВЕСЬ ЭКРАН */
+.page-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url("../img/bg.jpeg") no-repeat center center;
+    background-size: cover;
+    overflow: hidden;
 }
 
-.sidebar .logo-img {
-    width: 100px;
-    height: auto;
-    display: block;
-    margin-bottom: 15px;
-}
+/* ===== ЦЕНТР ===== */
 
-.sidebar .logo-text {
-    font-size: 20px;
-    font-weight: bold;
-    color: #fff;
-    margin-bottom: 25px;
-}
+.center-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
-}
-
-.sidebar .nav-links li {
-    margin-bottom: 20px;
-}
-
-.sidebar .nav-links li a {
-    text-decoration: none;
-    color: #fff;
-    font-size: 20px;
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
-.sidebar .nav-links li a:hover {
-    color: #f5a623;
-}
-
-.main-content {
-    margin-left: 220px;
-    padding: 20px;
-}
-
-/* =========================
-   Кнопка "Забронировать стол"
-========================= */
-.reserve-btn .btn {
-    display: inline-block;
-    padding: 14px 28px;
-    background-color: #f5a623;
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 8px;
-    transition: background-color 0.3s;
-}
-
-.reserve-btn .btn:hover {
-    background-color: #d48806;
-}
-
-/* Кнопка меню */
-.menu-btn {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    z-index: 1001;
-
-    background: rgba(0,0,0,0.7);
+    text-align: center;
     color: white;
-    border: none;
-    font-size: 30px;
-    padding: 10px 15px;
-    border-radius: 8px;
-    cursor: pointer;
 }
+
+.center-content h1 {
+    font-size: 70px;
+    margin: 0;
+}
+
+.center-content p {
+    font-size: 22px;
+    margin: 20px 0 40px;
+}
+
+/* КНОПКА */
+.reserve-btn .btn {
+    padding: 15px 30px;
+    background: #f5a623;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+/* ===== SIDEBAR ===== */
 
 .sidebar {
     position: fixed;
@@ -96,12 +56,54 @@ body {
     height: 100%;
     background: rgba(0,0,0,0.85);
     padding: 20px;
-    transition: left 0.3s ease;
-    z-index: 1000;
+    transition: 0.3s;
+    padding-top: 80px;
 }
-
 .sidebar.active {
     left: 0;
 }
 
+.nav-links {
+    list-style: none;
+    padding: 0;
+}
 
+.nav-links li {
+    margin: 35px 0;
+}
+
+.nav-links a {
+    font-size: 22px;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* ===== КНОПКА МЕНЮ ===== */
+
+.menu-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+
+    font-size: 30px;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+}
+
+/* ===== ЛОГО В ПРАВОМ ВЕРХНЕМ ===== */
+
+.top-logo {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.top-logo img {
+    width: 120px;
+    height: auto;
+}

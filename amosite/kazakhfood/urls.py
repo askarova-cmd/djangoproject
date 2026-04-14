@@ -11,6 +11,10 @@ urlpatterns = [
     path('reserve/', views.reserve, name='reserve'),
     path('category/<slug:category_slug>/', views.menu, name='menu_by_category'),
     path('dish/<int:pk>/', views.dish_detail, name='dish_detail'),
+    path('delivery/', views.delivery, name='delivery'),
+    path('', views.home_ru, name='home_ru'),
+    path('kk/', views.home_kk, name='home_kk'),
+    path('en/', views.home_en, name='home_en'),
 ]
 
 

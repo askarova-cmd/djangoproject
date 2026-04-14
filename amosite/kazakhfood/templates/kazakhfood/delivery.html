@@ -1,0 +1,73 @@
+{% extends 'kazakhfood/base.html' %}
+{% load static %}
+
+{% block title %}Доставка{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'kazakhfood/css/delivery.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<!-- 🔥 ГЛАВНЫЙ ЭКРАН С ФОТО -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>🚚 Доставка еды</h1>
+        <p>Казахская национальная кухня — быстро, вкусно и горячо</p>
+        <a href="#info" class="btn">Подробнее</a>
+    </div>
+</section>
+
+<header class="nav-wrapper">
+    <div class="nav-links">
+        <a href="{% url 'index' %}">Главная</a>
+        <a href="{% url 'about' %}">О нас</a>
+        <a href="{% url 'menu' %}">Меню</a>
+        <a href="{% url 'blog' %}">Блог</a>
+        <a href="{% url 'delivery' %}">Доставка</a>
+        <a href="{% url 'contacts' %}">Контакты</a>
+    </div>
+</header>
+
+
+<!-- 📦 ИНФОРМАЦИЯ -->
+<section class="container" id="info">
+
+    <div class="box">
+        <h2>Условия доставки</h2>
+        <ul>
+            <li>⏰ Время доставки: 30–60 минут</li>
+            <li>📍 Радиус: до 10 км</li>
+            <li>💳 Оплата: наличные / карта</li>
+            <li>🔥 Еда приезжает горячей</li>
+        </ul>
+    </div>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>1. Выбор блюд</h3>
+            <p>Выберите любимые блюда в меню ресторана.</p>
+        </div>
+
+        <div class="card">
+            <h3>2. Оформление</h3>
+            <p>Укажите адрес и контактный номер.</p>
+        </div>
+
+        <div class="card">
+            <h3>3. Доставка</h3>
+            <p>Мы привозим заказ прямо к вашей двери.</p>
+        </div>
+
+    </div>
+
+    <div class="box center">
+        <h2>📞 Быстрый заказ</h2>
+        <p>Хотите быстрее? Позвоните нам!</p>
+        <a href="tel:+77771234567" class="btn">Позвонить</a>
+    </div>
+
+</section>
+
+{% endblock %}

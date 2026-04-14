@@ -1,0 +1,97 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: white;
+}
+
+/* Центрирование */
+.contacts-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Карточка */
+.contacts-card {
+    width: 500px;
+    background: #f3f3f3;
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    text-align: left;
+}
+
+.contacts-card h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 36px;
+    color: #2c2c2c;
+}
+
+.contact-item {
+    margin-bottom: 25px;
+}
+
+.contact-item strong {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.contact-item p {
+    margin: 0;
+    color: #555;
+}
+
+/* ===== НАВИГАЦИЯ СПРАВА ===== */
+
+.nav-wrapper {
+    width: 90%;
+    margin: 20px auto 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 30px;
+}
+
+/* ссылки меню */
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+}
+.nav-links a:hover {
+    color: #b32b2b;
+}
+
+/* Кнопка назад */
+.back-btn {
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+    padding: 12px;
+    background-color: #b32b2b;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.back-btn:hover {
+    background-color: #8f1f1f;
+}
+
+.success-message {
+    background: #d4edda;
+    color: #155724;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+}

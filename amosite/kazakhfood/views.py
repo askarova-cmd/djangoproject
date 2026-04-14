@@ -12,6 +12,18 @@ def index(request):
 def about(request):
     return render(request, 'kazakhfood/about.html')
 
+def delivery(request):
+    return render(request, 'kazakhfood/delivery.html')
+
+def home_ru(request):
+    return render(request, 'kazakhfood/home_ru.html')
+
+def home_kk(request):
+    return render(request, 'kazakhfood/home_kk.html')
+
+def home_en(request):
+    return render(request, 'kazakhfood/home_en.html')
+
 
 def menu(request, category_slug=None):
     categories = Category.objects.all()

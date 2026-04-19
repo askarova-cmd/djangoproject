@@ -112,17 +112,15 @@ LANGUAGE_CODE = 'ru'
 
 TIME_ZONE = 'Asia/Almaty'
 
-USE_I18N = True
-
-USE_TZ = True
-
 LANGUAGES = [
-    ('ru', 'Русский'),
-    ('kk', 'Қазақша'),
+    ('ru', 'Russian'),
+    ('kk', 'Kazakh'),
     ('en', 'English'),
 ]
 
-LOCALE_PATHS = [BASE_DIR / 'locale']
+USE_I18N = True
+
+USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)

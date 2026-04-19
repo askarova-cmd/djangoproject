@@ -9,6 +9,7 @@ urlpatterns = [
     path('', include('kazakhfood.urls')),
     path('i18n/', include('django.conf.urls.i18n')),
 ]
+
 urlpatterns += i18n_patterns(
     path('', include('kazakhfood.urls')),
 )

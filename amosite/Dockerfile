@@ -21,4 +21,4 @@ ENV PYTHONUNBUFFERED=1
 
 RUN python manage.py collectstatic --noinput
 
-CMD ["sh", "-c", "gunicorn amosite.wsgi:application --bind 0.0.0.0:$PORT"]
+CMD gunicorn amosite.wsgi:application --bind 0.0.0.0:8000
